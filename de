@@ -1,0 +1,5 @@
+eureka 包含两个组件， eureka Server和 eureka Client
+各个节点启动后，会在eureka server中注册，这样eureka server的服务注册表中会存储所有可用服务节点的信息，服务节点的信息可以在界面中直观的看到
+
+eureka client 是一个java客户端，用于简化eureka server的交互，客户端同时也具备一个内置，使用轮询(roubd-robin)负载算法的负载均衡器，在启动后，
+会向eureka server发送心跳(默认周期30秒)，如果eureks server在多个心跳周期内没有接收到某个节点的心跳，eureka server将会从服务注册表中把该服务移除(默认90秒)
